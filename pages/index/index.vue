@@ -8,14 +8,16 @@
 </template>
 
 <script>
+	import {getLunBo} from '@/api/api.js'
 	export default {
 		data() {
 			return {
 				title: 'Hello'
 			}
 		},
-		onLoad() {
-
+		async onLoad() {
+		const {data:res} = await getLunBo('/api/getlunbo')
+		console.log(res)
 		},
 		methods: {
 
