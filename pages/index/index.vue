@@ -18,9 +18,11 @@
 		async onLoad() {
 		const {data:res} = await getLunBo('/api/getlunbo')
 		console.log(res)
+		
 		},
+		
 		methods: {
-
+			
 		}
 	}
 </script>

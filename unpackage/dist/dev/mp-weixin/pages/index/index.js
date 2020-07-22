@@ -155,7 +155,9 @@ var _api = __webpack_require__(/*! @/api/api.js */ 17);function _interopRequireD
   onLoad: function onLoad() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$getLunBo, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
                 (0, _api.getLunBo)('/api/getlunbo'));case 2:_yield$getLunBo = _context.sent;res = _yield$getLunBo.data;
               console.log(res);case 5:case "end":return _context.stop();}}}, _callee);}))();
+
   },
+
   methods: {} };exports.default = _default;
 
 /***/ }),
