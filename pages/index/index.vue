@@ -1,14 +1,26 @@
 <template>
 	<view class="">
 		<view class="home">
-			<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500" :circular="true">
-				<swiper-item v-for="(item,index) in Carousel" :key="index" @click="btn(index)">
-					<image :src="item.img" mode="">a</image>
-				</swiper-item>
-				<!-- <swiper-item>
-					<image src="http://destiny001.gitee.io/image/ban2.jpg" mode=""></image>
-				</swiper-item> -->
-			</swiper>
+			<!-- 轮播图 -->
+			<view class="carousel">
+				<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500" :circular="true">
+					<swiper-item v-for="(item,index) in Carousel" :key="index" @click="btn(index)">
+						<image :src="item.img" mode="">a</image>
+					</swiper-item>
+					<!-- <swiper-item>
+						<image src="http://destiny001.gitee.io/image/ban2.jpg" mode=""></image>
+					</swiper-item> -->
+				</swiper>
+			</view>
+			<!-- 导航区域 -->
+			<view class="nav">
+				<view class="nav_item">
+					<view class="iconfont icon-tupian">
+						
+					</view>
+					<text>购物</text>
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
