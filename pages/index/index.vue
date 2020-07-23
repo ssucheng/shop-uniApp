@@ -14,12 +14,13 @@
 			</view>
 			<!-- 导航区域 -->
 			<view class="nav">
-				<view class="nav_item">
-					<view class="iconfont icon-tupian">
+				<view class="nav_item" v-for="(item,index) in navList" :key=index>
+					<view :class="item.icon">
 						
 					</view>
-					<text>购物</text>
+					<text>{{item.text}}</text>
 				</view>
+				
 			</view>
 		</view>
 	</view>
@@ -31,7 +32,25 @@
 		data() {
 			return {
 				title: 'Hello',
-				Carousel:[]
+				Carousel:[],//轮播图数据
+				navList:[
+					{
+						text:'商城超市',
+						icon:'iconfont icon-shangpin'
+					},
+					{
+						text:'联系我们',
+						icon:'iconfont icon-guanyuwomen'
+					},
+					{
+						text:'社区图片',
+						icon:'iconfont icon-tupian'
+					},
+					{
+						text:'学习视频',
+						icon:'iconfont icon-shipin'
+					},
+				]
 				
 			}
 		},
@@ -60,6 +79,28 @@
 			image{
 				width: 100%;
 				height: 100%;
+			}
+		}
+		.nav{
+			display: flex;
+			.nav_item{
+				width: 25%;
+				// background-color: pink;
+				text-align: center;
+				view{
+					width: 120rpx;
+					height: 120rpx;
+					margin:0 auto;  //盒子在所在盒子中居中
+					line-height: 120rpx; //上下居中	
+					background-color:$global-color ;
+					color: #fff;
+					font-size: 50rpx;
+					border-radius: 50%;
+					margin:20rpx auto;
+				}
+				text{
+					font-size: 30rpx;
+				}
 			}
 		}
 	}
