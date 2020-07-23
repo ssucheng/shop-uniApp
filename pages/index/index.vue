@@ -14,7 +14,7 @@
 			</view>
 			<!-- 导航区域 -->
 			<view class="nav">
-				<view class="nav_item" v-for="(item,index) in navList" :key=index>
+				<view class="nav_item" v-for="(item,index) in navList" :key=index @click="navCheck(item.navUrl)">
 					<view :class="item.icon">
 						
 					</view>
@@ -57,19 +57,23 @@
 				navList:[ //导航图标和文本数据
 					{
 						text:'商城超市',
-						icon:'iconfont icon-shangpin'
+						icon:'iconfont icon-shangpin',
+						navUrl:'/pages/shopList/shopList'
 					},
 					{
 						text:'联系我们',
-						icon:'iconfont icon-guanyuwomen'
+						icon:'iconfont icon-guanyuwomen',
+						navUrl:'/pages/shopList/shopList'
 					},
 					{
 						text:'社区图片',
-						icon:'iconfont icon-tupian'
+						icon:'iconfont icon-tupian',
+						navUrl:'/pages/shopList/shopList'
 					},
 					{
 						text:'学习视频',
-						icon:'iconfont icon-shipin'
+						icon:'iconfont icon-shipin',
+						navUrl:'/pages/shopList/shopList'
 					},
 				],
 				productsList:[]
@@ -95,6 +99,11 @@
 		methods: {
 			btn(index){
 				console.log(index)
+			},
+			navCheck(url){
+				uni.navigateTo({
+					url:url
+				})
 			}
 		}
 	}

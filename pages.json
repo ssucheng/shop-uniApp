@@ -17,10 +17,17 @@
 			"style": {
 				"navigationBarTitleText": "购物车"
 			}
-		},{
+		},
+		{
 			"path": "pages/member/menber",
 			"style": {
 				"navigationBarTitleText": "会员中心"
+			}
+		}
+		,{
+			"path": "pages/shopList/shopList",
+			"style": {
+				"navigationBarTitleText": "超市购物"
 			}
 		}
 	],

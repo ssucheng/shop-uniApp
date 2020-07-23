@@ -3,7 +3,8 @@
     "pages/index/index",
     "pages/news/news",
     "pages/shop/shop",
-    "pages/member/menber"
+    "pages/member/menber",
+    "pages/shopList/shopList"
   ],
   "subPackages": [],
   "window": {
