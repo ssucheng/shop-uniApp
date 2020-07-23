@@ -7767,46 +7767,21 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 11 */,
-/* 12 */,
-/* 13 */,
-/* 14 */,
-/* 15 */,
-/* 16 */,
-/* 17 */
-/*!******************************************************!*\
-  !*** /Users/sucheng/Desktop/uni-APP-shop/api/api.js ***!
-  \******************************************************/
+/* 11 */
+/*!*******************************************************!*\
+  !*** /Users/sucheng/Desktop/uni-APP-shop/util/api.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.getLunBo = getLunBo;var _fetch = __webpack_require__(/*! ./fetch.js */ 18);
-var _url = _interopRequireDefault(__webpack_require__(/*! ./url.js */ 19));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
-
-// 轮播图方法
-function getLunBo(url) {
-  return (0, _fetch.fetch)({
-    url: _url.default.baseUrl + url,
-    method: 'GET' });
-
-}
-
-/***/ }),
-/* 18 */
-/*!********************************************************!*\
-  !*** /Users/sucheng/Desktop/uni-APP-shop/api/fetch.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.fetch = fetch;function fetch(options) {
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.http = void 0;var BASE_URL = "http://localhost:8082";
+var http = function http(options) {
   return new Promise(function (resolve, reject) {
     uni.request({
-      url: options.url,
+      url: BASE_URL + options.url,
       method: options.method,
-      data: options.data,
+      data: options.data || {},
       success: function success(response) {
         resolve(response);
       },
@@ -7815,36 +7790,27 @@ function getLunBo(url) {
       } });
 
   });
-}
+};exports.http = http;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
-/* 19 */
-/*!******************************************************!*\
-  !*** /Users/sucheng/Desktop/uni-APP-shop/api/url.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
-  baseUrl: "http://localhost:8082" };exports.default = _default;
-
-/***/ }),
-/* 20 */,
-/* 21 */,
-/* 22 */,
-/* 23 */
+/* 12 */,
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */
 /*!*********************************************************************************************!*\
   !*** ./node_modules/@vue/babel-preset-app/node_modules/@babel/runtime/regenerator/index.js ***!
   \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! regenerator-runtime */ 24);
+module.exports = __webpack_require__(/*! regenerator-runtime */ 19);
 
 /***/ }),
-/* 24 */
+/* 19 */
 /*!************************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime-module.js ***!
   \************************************************************/
@@ -7875,7 +7841,7 @@ var oldRuntime = hadRuntime && g.regeneratorRuntime;
 // Force reevalutation of runtime.js.
 g.regeneratorRuntime = undefined;
 
-module.exports = __webpack_require__(/*! ./runtime */ 25);
+module.exports = __webpack_require__(/*! ./runtime */ 20);
 
 if (hadRuntime) {
   // Restore the original runtime.
@@ -7891,7 +7857,7 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 25 */
+/* 20 */
 /*!*****************************************************!*\
   !*** ./node_modules/regenerator-runtime/runtime.js ***!
   \*****************************************************/
@@ -8622,22 +8588,48 @@ if (hadRuntime) {
 
 
 /***/ }),
-/* 26 */,
-/* 27 */
-/*!*******************************************************!*\
-  !*** /Users/sucheng/Desktop/uni-APP-shop/util/api.js ***!
-  \*******************************************************/
+/* 21 */
+/*!******************************************************!*\
+  !*** /Users/sucheng/Desktop/uni-APP-shop/api/api.js ***!
+  \******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.http = void 0;var BASE_URL = "http://localhost:8082";
-var http = function http(options) {
+Object.defineProperty(exports, "__esModule", { value: true });exports.getLunBoApi = getLunBoApi;exports.getProductsApi = getProductsApi;var _fetch = __webpack_require__(/*! ./fetch.js */ 22);
+var _url = _interopRequireDefault(__webpack_require__(/*! ./url.js */ 23));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+
+// 轮播图方法
+function getLunBoApi(url) {
+  return (0, _fetch.fetch)({
+    url: _url.default.baseUrl + url,
+    method: 'GET' });
+
+}
+
+//推荐商品数据
+function getProductsApi(url) {
+  return (0, _fetch.fetch)({
+    url: _url.default.baseUrl + url,
+    method: 'GET' });
+
+}
+
+/***/ }),
+/* 22 */
+/*!********************************************************!*\
+  !*** /Users/sucheng/Desktop/uni-APP-shop/api/fetch.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.fetch = fetch;function fetch(options) {
   return new Promise(function (resolve, reject) {
     uni.request({
-      url: BASE_URL + options.url,
+      url: options.url,
       method: options.method,
-      data: options.data || {},
+      data: options.data,
       success: function success(response) {
         resolve(response);
       },
@@ -8646,8 +8638,20 @@ var http = function http(options) {
       } });
 
   });
-};exports.http = http;
+}
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
+/* 23 */
+/*!******************************************************!*\
+  !*** /Users/sucheng/Desktop/uni-APP-shop/api/url.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _default = {
+  baseUrl: "http://localhost:8082" };exports.default = _default;
 
 /***/ })
 ]]);
