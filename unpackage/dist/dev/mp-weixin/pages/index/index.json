@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "电商商城",
-  "usingComponents": {}
+  "usingComponents": {
+    "sc-products": "/components/products"
+  }
 }

@@ -24,50 +24,52 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.home swiper {
-  width: 750rpx;
-  height: 380rpx;
-}
-.home swiper image {
-  width: 100%;
-  height: 100%;
-}
-.home .nav {
+.products_list {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  padding: 0 15rpx;
 }
-.home .nav .nav_item {
-  width: 25%;
-  text-align: center;
-}
-.home .nav .nav_item view {
-  width: 120rpx;
-  height: 120rpx;
-  margin: 0 auto;
-  line-height: 120rpx;
-  background-color: #b50e03;
-  color: #fff;
-  font-size: 50rpx;
-  border-radius: 50%;
-  margin: 20rpx auto;
-}
-.home .nav .nav_item text {
-  font-size: 30rpx;
-}
-.home .products {
-  background: #eee;
-  overflow: hidden;
-  margin-top: 20rpx;
-}
-.home .products .tit {
-  height: 100rpx;
-  line-height: 100rpx;
-  color: #b50e03;
-  text-align: center;
-  letter-spacing: 40rpx;
+.products_list .products_list_on {
+  padding: 0 10rpx;
+  box-sizing: border-box;
   background-color: #fff;
-  margin: 7px auto;
+  width: 49%;
+  margin: 5rpx 0;
+}
+.products_list .products_list_on .img {
+  width: 80%;
+  height: 300rpx;
+  margin: 0 auto;
+}
+.products_list .products_list_on .img image {
+  width: 100%;
+  height: 100%;
+}
+.products_list .products_list_on .price {
+  color: #b50e03;
   font-size: 40rpx;
+  margin: 20rpx 0 5rpx 0;
+}
+.products_list .products_list_on .price text:nth-child(2) {
+  color: #ccc;
+  font-size: 28rpx;
+  margin-left: 17rpx;
+  text-decoration: line-through;
+}
+.products_list .products_list_on,
+.products_list .products_list_on .brand {
+  font-size: 28rpx;
+  line-height: 50rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
