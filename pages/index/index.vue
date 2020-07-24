@@ -72,7 +72,7 @@
 		async onLoad() {
 			//轮播图数据请求
 		const {data:res} = await getLunBoApi('/api/getlunbo')
-		// console.log(res)
+		console.log(res)
 		if(res.status !== 0) return uni.showToast({title:'获取数据失败'})
 			// uni.showToast({
 			// 	title:'获取数据成功'

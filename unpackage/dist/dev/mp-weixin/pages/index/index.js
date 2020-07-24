@@ -209,19 +209,19 @@ var _api = __webpack_require__(/*! @/api/api.js */ 21);function _interopRequireD
   },
   onLoad: function onLoad() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$getLunBoApi, res, _yield$getProductsApi, res1;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
 
-                (0, _api.getLunBoApi)('/api/getlunbo'));case 2:_yield$getLunBoApi = _context.sent;res = _yield$getLunBoApi.data;if (!(
-
-              res.status !== 0)) {_context.next = 6;break;}return _context.abrupt("return", uni.showToast({ title: '获取数据失败' }));case 6:
+                (0, _api.getLunBoApi)('/api/getlunbo'));case 2:_yield$getLunBoApi = _context.sent;res = _yield$getLunBoApi.data;
+              console.log(res);if (!(
+              res.status !== 0)) {_context.next = 7;break;}return _context.abrupt("return", uni.showToast({ title: '获取数据失败' }));case 7:
               // uni.showToast({
               // 	title:'获取数据成功'
               // })
-              _this.Carousel = res.message;_context.next = 9;return (
-                (0, _api.getProductsApi)('/api/getgoods?pageindex=1'));case 9:_yield$getProductsApi = _context.sent;res1 = _yield$getProductsApi.data;
+              _this.Carousel = res.message;_context.next = 10;return (
+                (0, _api.getProductsApi)('/api/getgoods?pageindex=1'));case 10:_yield$getProductsApi = _context.sent;res1 = _yield$getProductsApi.data;
               console.log(res1);if (!(
-              res.status !== 0)) {_context.next = 14;break;}return _context.abrupt("return", uni.showToast({
-                title: '获取商品数据失败' }));case 14:
+              res.status !== 0)) {_context.next = 15;break;}return _context.abrupt("return", uni.showToast({
+                title: '获取商品数据失败' }));case 15:
 
-              _this.productsList = res1.message;case 15:case "end":return _context.stop();}}}, _callee);}))();
+              _this.productsList = res1.message;case 16:case "end":return _context.stop();}}}, _callee);}))();
   },
 
   methods: {

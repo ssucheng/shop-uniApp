@@ -4,7 +4,8 @@
     "pages/news/news",
     "pages/shop/shop",
     "pages/member/menber",
-    "pages/shopList/shopList"
+    "pages/shopList/shopList",
+    "pages/contactUs/contactUs"
   ],
   "subPackages": [],
   "window": {
