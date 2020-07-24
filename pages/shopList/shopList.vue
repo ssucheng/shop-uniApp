@@ -1,7 +1,7 @@
 <template>
 	<view class="list">
 		<sc-products :ProductData="productsList"></sc-products>
-		<view class="baseLine" v-if="tag">---我也是有底线的---</view>
+		<view class="baseLine" v-if="flag">---我也是有底线的---</view>
 	</view>
 </template>
 
@@ -14,7 +14,7 @@
 			return{
 				index:1,
 				productsList:[],
-				tag:false
+				flag:false
 			}
 		},
 		onLoad(){
@@ -22,23 +22,34 @@
 			
 		},
 		onReachBottom(){
-			console.log('触底了')
-			if(this.productsList.length < this.index * 10 ) return this.tag = true
+			// console.log('触底了')
+			if(this.productsList.length < this.index * 10 ) return this.flag = true
 			this.index ++ 
 			this.getList()
 			
 		},
 		 onPullDownRefresh() {
-		        console.log('refresh');
+		        // console.log('refresh');
+				this.index = 1
+				this.productsList = []
+				this.flag = false
+				let that = this
 		        setTimeout(function () {
-		            uni.stopPullDownRefresh();
+					that.getList(()=>{
+						uni.stopPullDownRefresh()
+					})
+		           
 		        }, 1000);
 		    }
 		,methods:{
-			async getList(){
+			async getList(callback){
 				const {data:res} = await getProductsApi(`/api/getgoods?pageindex=${this.index}`)
 				if(res.status !== 0) return uni.showToast({title:'获取商品列表失败'})
 				this.productsList = [...this.productsList,...res.message]
+				 // uni.stopPullDownRefresh();数据请求成功调用刷新停止,但是这样写不对,因为每次请求都要重复这行代码
+											// 解决方案:只有下拉刷新的时候调用
+											// 用回调函数的方式解决
+				callback &&	callback() 	 //callback && callback() 相当于 if callback 『{callback()}
 			}
 		}
 		
@@ -49,7 +60,12 @@
 	.list{
 		background-color: #eee;
 		.baseLine{
-			
+			width: 100%;
+			height: 100rpx;
+			line-height: 100rpx;
+			text-align: center;
+			font-size: 28rpx;
+			letter-spacing: 28rpx;
 		}
 	}
 </style>

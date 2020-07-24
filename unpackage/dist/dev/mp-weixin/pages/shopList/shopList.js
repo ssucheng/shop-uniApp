@@ -146,7 +146,7 @@ var _api = __webpack_require__(/*! @/api/api.js */ 21);function _interopRequireD
     return {
       index: 1,
       productsList: [],
-      tag: false };
+      flag: false };
 
   },
   onLoad: function onLoad() {
@@ -154,24 +154,35 @@ var _api = __webpack_require__(/*! @/api/api.js */ 21);function _interopRequireD
 
   },
   onReachBottom: function onReachBottom() {
-    console.log('触底了');
-    if (this.productsList.length < this.index * 10) return this.tag = true;
+    // console.log('触底了')
+    if (this.productsList.length < this.index * 10) return this.flag = true;
     this.index++;
     this.getList();
 
   },
   onPullDownRefresh: function onPullDownRefresh() {
-    console.log('refresh');
+    // console.log('refresh');
+    this.index = 1;
+    this.productsList = [];
+    this.flag = false;
+    var that = this;
     setTimeout(function () {
-      uni.stopPullDownRefresh();
+      that.getList(function () {
+        uni.stopPullDownRefresh();
+      });
+
     }, 1000);
   },
   methods: {
-    getList: function getList() {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$getProductsApi, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
+    getList: function getList(callback) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var _yield$getProductsApi, res;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:_context.next = 2;return (
                   (0, _api.getProductsApi)("/api/getgoods?pageindex=".concat(_this.index)));case 2:_yield$getProductsApi = _context.sent;res = _yield$getProductsApi.data;if (!(
                 res.status !== 0)) {_context.next = 6;break;}return _context.abrupt("return", uni.showToast({ title: '获取商品列表失败' }));case 6:
-                _this.productsList = [].concat(_toConsumableArray(_this.productsList), _toConsumableArray(res.message));case 7:case "end":return _context.stop();}}}, _callee);}))();
-    } } };exports.default = _default;
+                _this.productsList = [].concat(_toConsumableArray(_this.productsList), _toConsumableArray(res.message));
+                // uni.stopPullDownRefresh();数据请求成功调用刷新停止,但是这样写不对,因为每次请求都要重复这行代码
+                // 解决方案:只有下拉刷新的时候调用
+                // 用回调函数的方式解决
+                callback && callback(); //callback && callback() 相当于 if callback 『{callback()}
+              case 8:case "end":return _context.stop();}}}, _callee);}))();} } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
