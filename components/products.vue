@@ -20,7 +20,12 @@
 
 <script>
 	export default{
-		props:['ProductData'],
+		props:{
+			ProductData:{
+				type:Array,
+				value:[]
+			}
+		},
 		methods:{
 			btn(id){
 				this.$emit('productsItemClick',id)

@@ -232,6 +232,10 @@ var _api = __webpack_require__(/*! @/api/api.js */ 21);function _interopRequireD
       uni.navigateTo({
         url: url });
 
+    },
+    proClick: function proClick(val) {
+      // 引入的组件内部 通过点击触发 $emit ,所在的这个组件监听 $emit事件
+      console.log(val);
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

@@ -27,7 +27,7 @@
 				<view class="tit">
 					推荐商品
 				</view>
-				<sc-products :ProductData="productsList"></sc-products>
+				<sc-products :ProductData="productsList" @productsItemClick="proClick()"></sc-products>
 			</view>
 		</view>
 	</view>
@@ -94,6 +94,10 @@
 				uni.navigateTo({
 					url:url
 				})
+			},
+			proClick(val){
+				// 引入的组件内部 通过点击触发 $emit ,所在的这个组件监听 $emit事件
+				console.log(val)
 			}
 		}
 	}

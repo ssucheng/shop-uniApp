@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "超市购物",
-  "usingComponents": {}
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "sc-products": "/components/products"
+  }
 }

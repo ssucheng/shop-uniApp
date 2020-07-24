@@ -136,7 +136,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 //
 var _default =
 {
-  props: ['ProductData'],
+  props: {
+    ProductData: {
+      type: Array,
+      value: [] } },
+
+
   methods: {
     btn: function btn(id) {
       this.$emit('productsItemClick', id);
