@@ -53,12 +53,12 @@
 					{
 						text:'联系我们',
 						icon:'iconfont icon-guanyuwomen',
-						navUrl:'/pages/shopList/shopList'
+						navUrl:'/pages/contactUs/contactUs'
 					},
 					{
 						text:'社区图片',
 						icon:'iconfont icon-tupian',
-						navUrl:'/pages/shopList/shopList'
+						navUrl:'/pages/community/community'
 					},
 					{
 						text:'学习视频',

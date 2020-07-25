@@ -27,7 +27,7 @@ export function getPicsApi(url){
 
 // 获取二级图片列表
 export function getImagesApi(url,parmas){
-	fetch({
+	return fetch({
 		url:api.baseUrl + url  +parmas.id,
 		method:'GET'
 	})
