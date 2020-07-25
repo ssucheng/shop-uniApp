@@ -16,11 +16,19 @@ export function getProductsApi(url){
 		method:'GET'
 	})
 }
+
 // 获取图片分类
-	
 export function getPicsApi(url){
 	return fetch({
 		url:api.baseUrl + url,
+		method:'GET'
+	})
+}
+
+// 获取二级图片列表
+export function getImagesApi(url,parmas){
+	fetch({
+		url:api.baseUrl + url  +parmas.id,
 		method:'GET'
 	})
 }
