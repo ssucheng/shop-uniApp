@@ -39,6 +39,13 @@
 				"navigationBarTitleText": "联系我们",
 				"enablePullDownRefresh":true
 			}
+		},
+		{
+			"path": "pages/community/community",
+			"style": {
+				"navigationBarTitleText": "社区图片",
+				"enablePullDownRefresh":true
+			}
 		}
 	],
 	"globalStyle": {

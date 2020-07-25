@@ -5,7 +5,8 @@
     "pages/shop/shop",
     "pages/member/menber",
     "pages/shopList/shopList",
-    "pages/contactUs/contactUs"
+    "pages/contactUs/contactUs",
+    "pages/community/community"
   ],
   "subPackages": [],
   "window": {

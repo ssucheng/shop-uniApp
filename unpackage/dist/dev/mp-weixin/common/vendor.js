@@ -8596,7 +8596,7 @@ if (hadRuntime) {
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.getLunBoApi = getLunBoApi;exports.getProductsApi = getProductsApi;var _fetch = __webpack_require__(/*! ./fetch.js */ 22);
+Object.defineProperty(exports, "__esModule", { value: true });exports.getLunBoApi = getLunBoApi;exports.getProductsApi = getProductsApi;exports.getPicsApi = getPicsApi;var _fetch = __webpack_require__(/*! ./fetch.js */ 22);
 var _url = _interopRequireDefault(__webpack_require__(/*! ./url.js */ 23));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
 
 // 轮播图方法
@@ -8609,6 +8609,14 @@ function getLunBoApi(url) {
 
 //推荐商品数据
 function getProductsApi(url) {
+  return (0, _fetch.fetch)({
+    url: _url.default.baseUrl + url,
+    method: 'GET' });
+
+}
+// 获取图片分类
+
+function getPicsApi(url) {
   return (0, _fetch.fetch)({
     url: _url.default.baseUrl + url,
     method: 'GET' });

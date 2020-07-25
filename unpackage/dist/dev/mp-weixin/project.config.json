@@ -36,8 +36,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "联系我们",
-					"pathName": "pages/contactUs/contactUs",
+					"name": "社区图片",
+					"pathName": "pages/community/community",
 					"query": "",
 					"scene": null
 				}
