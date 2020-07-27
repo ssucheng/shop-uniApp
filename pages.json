@@ -47,6 +47,14 @@
 				"enablePullDownRefresh":true
 			}
 		}
+		,
+		{
+			"path": "pages/news-detail/news-detail",
+			"style": {
+				"navigationBarTitleText": "资讯详情",
+				"enablePullDownRefresh":true
+			}
+		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
