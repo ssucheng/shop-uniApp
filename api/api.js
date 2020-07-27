@@ -32,3 +32,11 @@ export function getImagesApi(url,parmas){
 		method:'GET'
 	})
 }
+
+// 获取资讯列表
+export function getNewsApi(url){
+	return fetch({
+		url:api.baseUrl + url,
+		method:'GET'
+	})
+}

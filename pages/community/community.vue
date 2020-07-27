@@ -13,14 +13,17 @@
 		  <scroll-view  :scroll-y='true'  class="right"
 		                 @scroll="scroll">
 		     <view v-for="(item,index) in picsImageList" :key="index" >
-		  			<view class="first">
+		  			<view class="first" @click="preImg(item.img_url)">
 		  				<image :src="item.img_url" mode=""></image>
 		  			</view>
 					<view class="second">
 						{{item.title}}
 					</view>
+					 
 		    </view>
-		                   	
+		           	<view class="" v-if="picsImageList.length ===0 ?true:false">
+		           					 暂无数据
+		           	</view> 
 		   </scroll-view>
 	</view>
 </template>
@@ -31,7 +34,7 @@
 		data(){
 			return{
 				picsList:[],
-				active:3,
+				active:0,
 				picsImageList:[]
 			}
 		},
@@ -46,10 +49,10 @@
 		},
 		methods:{	
 			upper(){
-				console.log('我到顶了')
+				// console.log('我到顶了')
 			},
 			lower(){
-				console.log('我到底了')
+				// console.log('我到底了')
 			},
 			scroll(){
 				// console.log('');
@@ -60,7 +63,7 @@
 				this.picsList = res.message
 				
 				// 默认进入页面是显示第四个  因为第一个接口没有数据 一般是默认第一个
-				this.scrollBtn(this.active,this.picsList[3].id)
+				this.scrollBtn(this.active,this.picsList[0].id)
 				 callback && callback()
 			},
 			// 点击事件
@@ -85,6 +88,15 @@
 				})
 				this.picsImageList = res.message
 				callback && callback()
+			},
+			preImg(current){
+				let urls = this.picsImageList.map(item => {
+					return item.img_url
+				})	
+				uni.previewImage({
+				current,
+				urls
+				})
 			}
 		}
 		
