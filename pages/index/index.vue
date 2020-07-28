@@ -72,14 +72,12 @@
 		async onLoad() {
 			//轮播图数据请求
 		const {data:res} = await getLunBoApi('/api/getlunbo')
-		console.log(res)
 		if(res.status !== 0) return uni.showToast({title:'获取数据失败'})
 			// uni.showToast({
 			// 	title:'获取数据成功'
 			// })
 		 this.Carousel = res.message
 		const {data:res1} = await getProductsApi('/api/getgoods?pageindex=1')
-		 console.log(res1)
 		if(res.status !== 0) return uni.showToast({
 			title:'获取商品数据失败'
 		})
@@ -88,7 +86,6 @@
 		
 		methods: {
 			btn(index){
-				console.log(index)
 			},
 			navCheck(url){
 				uni.navigateTo({
@@ -96,7 +93,6 @@
 				})
 			},
 			proClick(id){
-				console.log(id)
 				// 引入的组件内部 通过点击触发 $emit ,所在的这个组件监听 $emit事件
 				uni.navigateTo({
 					url:'../shopListDetail/shopListDetail?id='+id
@@ -106,7 +102,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.home{
 		swiper{
 			// swiper-item 的高度宽度是由swiper决定的 默认设置 成了百分之百

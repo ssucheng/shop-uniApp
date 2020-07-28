@@ -42,7 +42,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.pics{
 		width: 750rpx;
 		height: 300rpx;

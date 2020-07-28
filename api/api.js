@@ -48,3 +48,11 @@ export function getNesDetailApi(url,parmas){
 		method:'GET'
 	})
 }
+
+// 商品详情轮播图
+export function getImageInfoApi(url,parmas){
+	return fetch({
+		url:api.baseUrl + url+parmas.id,
+		method:'GET'
+	})
+}

@@ -41,7 +41,7 @@
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.products_list{
 		display: flex;
 		flex-wrap: wrap;
