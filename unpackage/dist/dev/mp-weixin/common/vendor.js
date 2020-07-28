@@ -7767,7 +7767,33 @@ function normalizeComponent (
 
 
 /***/ }),
-/* 11 */,
+/* 11 */
+/*!*******************************************************!*\
+  !*** /Users/sucheng/Desktop/uni-APP-shop/util/api.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.http = void 0;var BASE_URL = "http://localhost:8082";
+var http = function http(options) {
+  return new Promise(function (resolve, reject) {
+    uni.request({
+      url: BASE_URL + options.url,
+      method: options.method,
+      data: options.data || {},
+      success: function success(response) {
+        resolve(response);
+      },
+      fail: function fail(err) {
+        reject(err);
+      } });
+
+  });
+};exports.http = http;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
+
+/***/ }),
 /* 12 */,
 /* 13 */,
 /* 14 */,

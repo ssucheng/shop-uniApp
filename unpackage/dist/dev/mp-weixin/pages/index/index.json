@@ -1,4 +1,6 @@
 {
-  "navigationBarTitleText": "uni-app",
-  "usingComponents": {}
+  "navigationBarTitleText": "电商商城",
+  "usingComponents": {
+    "sc-products": "/components/products"
+  }
 }

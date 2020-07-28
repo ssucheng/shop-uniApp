@@ -1,13 +1,53 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/news/news",
+    "pages/shop/shop",
+    "pages/member/menber",
+    "pages/shopList/shopList",
+    "pages/contactUs/contactUs",
+    "pages/community/community",
+    "pages/news-detail/news-detail",
+    "pages/shopListDetail/shopListDetail"
   ],
   "subPackages": [],
   "window": {
-    "navigationBarTextStyle": "black",
+    "navigationBarTextStyle": "white",
     "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#F8F8F8",
+    "navigationBarBackgroundColor": "#b50e03",
     "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#b50e03",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/icon/home.png",
+        "selectedIconPath": "static/icon/home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "iconPath": "static/icon/news.png",
+        "selectedIconPath": "static/icon/news-active.png",
+        "text": "资讯"
+      },
+      {
+        "pagePath": "pages/shop/shop",
+        "iconPath": "static/icon/cart.png",
+        "selectedIconPath": "static/icon/cart-active.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/member/menber",
+        "iconPath": "static/icon/member.png",
+        "selectedIconPath": "static/icon/member-active.png",
+        "text": "会员"
+      }
+    ]
   },
   "usingComponents": {}
 }
