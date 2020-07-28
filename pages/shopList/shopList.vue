@@ -1,6 +1,6 @@
 <template>
 	<view class="list">
-		<sc-products :ProductData="productsList"></sc-products>
+		<sc-products :ProductData="productsList" @productsItemClick='clickBtn'></sc-products>
 		<view class="baseLine" v-if="flag">---我也是有底线的---</view>
 	</view>
 </template>
@@ -50,6 +50,11 @@
 											// 解决方案:只有下拉刷新的时候调用
 											// 用回调函数的方式解决
 				callback &&	callback() 	 //callback && callback() 相当于 if callback 『{callback()}
+			},
+			clickBtn(id){
+				uni.navigateTo({
+					url:'../shopListDetail/shopListDetail?id='+id
+				})
 			}
 		}
 		

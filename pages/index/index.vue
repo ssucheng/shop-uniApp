@@ -95,9 +95,12 @@
 					url:url
 				})
 			},
-			proClick(val){
+			proClick(id){
+				console.log(id)
 				// 引入的组件内部 通过点击触发 $emit ,所在的这个组件监听 $emit事件
-				console.log(val)
+				uni.navigateTo({
+					url:'../shopListDetail/shopListDetail?id='+id
+				})
 			}
 		}
 	}

@@ -40,3 +40,11 @@ export function getNewsApi(url){
 		method:'GET'
 	})
 }
+
+// 资讯详情
+export function getNesDetailApi(url,parmas){
+	return fetch({
+		url:api.baseUrl + url+parmas.id,
+		method:'GET'
+	})
+}

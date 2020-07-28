@@ -54,6 +54,13 @@
 				"navigationBarTitleText": "资讯详情",
 				"enablePullDownRefresh":true
 			}
+		},
+		{
+			"path": "pages/shopListDetail/shopListDetail",
+			"style": {
+				"navigationBarTitleText": "商品详情",
+				"enablePullDownRefresh":true
+			}
 		}
 	],
 	"globalStyle": {
