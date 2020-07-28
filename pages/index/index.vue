@@ -14,7 +14,7 @@
 			</view>
 			<!-- 导航区域 -->
 			<view class="nav">
-				<view class="nav_item" v-for="(item,index) in navList" :key=index>
+				<view class="nav_item" v-for="(item,index) in navList" :key=index @click="navCheck(item.navUrl)">
 					<view :class="item.icon">
 						
 					</view>
@@ -27,21 +27,7 @@
 				<view class="tit">
 					推荐商品
 				</view>
-				<view class="products_list">
-					<view class="products_list_on" v-for="(item,index) in productsList" :key="index">
-						<view class="img">
-							<image :src="item.img_url" mode=""></image>
-						</view>
-						<view class="price">
-							<text>￥{{item.sell_price}}</text>
-							<text> ￥{{item.market_price}}</text>
-						</view>
-						<view class="brand">
-							{{item.title}}
-						</view>
-					</view>
-			
-				</view>
+				<sc-products :ProductData="productsList" @productsItemClick="proClick"></sc-products>
 			</view>
 		</view>
 	</view>
@@ -49,7 +35,11 @@
 
 <script>
 	import {getLunBoApi,getProductsApi} from '@/api/api.js'
+	import products from '@/components/products.vue'
 	export default {
+		components:{
+			scProducts:products
+		},
 		data() {
 			return {
 				title: 'Hello',
@@ -57,19 +47,23 @@
 				navList:[ //导航图标和文本数据
 					{
 						text:'商城超市',
-						icon:'iconfont icon-shangpin'
+						icon:'iconfont icon-shangpin',
+						navUrl:'/pages/shopList/shopList'
 					},
 					{
 						text:'联系我们',
-						icon:'iconfont icon-guanyuwomen'
+						icon:'iconfont icon-guanyuwomen',
+						navUrl:'/pages/contactUs/contactUs'
 					},
 					{
 						text:'社区图片',
-						icon:'iconfont icon-tupian'
+						icon:'iconfont icon-tupian',
+						navUrl:'/pages/community/community'
 					},
 					{
 						text:'学习视频',
-						icon:'iconfont icon-shipin'
+						icon:'iconfont icon-shipin',
+						navUrl:'/pages/shopList/shopList'
 					},
 				],
 				productsList:[]
@@ -78,14 +72,12 @@
 		async onLoad() {
 			//轮播图数据请求
 		const {data:res} = await getLunBoApi('/api/getlunbo')
-		// console.log(res)
 		if(res.status !== 0) return uni.showToast({title:'获取数据失败'})
 			// uni.showToast({
 			// 	title:'获取数据成功'
 			// })
 		 this.Carousel = res.message
 		const {data:res1} = await getProductsApi('/api/getgoods?pageindex=1')
-		 console.log(res1)
 		if(res.status !== 0) return uni.showToast({
 			title:'获取商品数据失败'
 		})
@@ -94,13 +86,23 @@
 		
 		methods: {
 			btn(index){
-				console.log(index)
+			},
+			navCheck(url){
+				uni.navigateTo({
+					url:url
+				})
+			},
+			proClick(id){
+				// 引入的组件内部 通过点击触发 $emit ,所在的这个组件监听 $emit事件
+				uni.navigateTo({
+					url:'../shopListDetail/shopListDetail?id='+id
+				})
 			}
 		}
 	}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 	.home{
 		swiper{
 			// swiper-item 的高度宽度是由swiper决定的 默认设置 成了百分之百
@@ -151,50 +153,7 @@
 				font-size: 40rpx;
 			}
 			//商品
-			.products_list{
-				display: flex;
-				flex-wrap: wrap;
-				justify-content: space-between;
-				padding:0 15rpx;
-				.products_list_on{
-					padding: 0 10rpx;
-					box-sizing: border-box;
-					background-color: #fff;
-					width: 49%;
-					margin:5rpx 0;
-					.img{
-						width: 80%;
-						height: 300rpx;
-						margin: 0 auto;
-						image{
-							width: 100%;
-							height: 100%;
-						}
-					}
-					.price{
-						color: $global-color;
-						font-size: 40rpx;
-						margin:20rpx 0 5rpx 0;
-						text:nth-child(2){
-							color: #ccc;
-							font-size: 28rpx;
-							margin-left:17rpx;
-							text-decoration: line-through; //花掉属性
-						}
-					},
-					.brand{
-						font-size:28rpx;
-						line-height: 50rpx;
-						// 设置超出两行的文本显示  .....
-						overflow: hidden;
-						text-overflow: ellipsis;
-						display: -webkit-box;
-						-webkit-line-clamp: 2;
-						-webkit-box-orient: vertical;
-					}
-					
-				}
-			}
+		
 		}
 	
 	}
