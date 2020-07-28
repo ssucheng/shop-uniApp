@@ -82,11 +82,12 @@
 			this.getImageInfo(options.id)
 			this.getInfo(options.id)
 			this.getDesc(options.id)
-			 this.options.forEach(item => {
-				console.log(item.info)
-				item.info = 4
-			})
-			console.log(this.options)
+			// 通过下面的方式可以实现更改数组中的数据
+			//  this.options.forEach(item => {
+			// 	console.log(item.info)
+			// 	item.info = 4
+			// })
+			// console.log(this.options)
 		},
 		methods:{
 			async getImageInfo(id){
