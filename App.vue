@@ -16,4 +16,9 @@
 	
 	/*每个页面公共css */
 	@import url("./static/iconfont/iconfont.css");
+	/* 从后台返回的图片图片的类名 返回的html标签 */
+	.gomeImgLoad{
+		width: 750rpx;
+		height: auto;
+	}
 </style>

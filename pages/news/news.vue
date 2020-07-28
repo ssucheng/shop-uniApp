@@ -37,10 +37,10 @@
 </script>
 
 <style lang="scss" scoped>
-	page{
-		height: 100%;
+	// page{
+	// 	height: 100%;
 		
-	}
+	// }
 	
 	
 </style>

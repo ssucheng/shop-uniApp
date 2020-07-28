@@ -56,3 +56,18 @@ export function getImageInfoApi(url,parmas){
 		method:'GET'
 	})
 }
+
+// 商品详细参数
+export function getInfoApi(url,parmas){
+	return fetch({
+		url:api.baseUrl + url+parmas.id,
+		method:'GET'
+	})
+}
+// 获取详细介绍
+export function getDescApi(url,parmas){
+	return fetch({
+		url:api.baseUrl + url+parmas.id,
+		method:'GET'
+	})
+}

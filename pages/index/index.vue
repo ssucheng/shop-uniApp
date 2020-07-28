@@ -27,7 +27,7 @@
 				<view class="tit">
 					推荐商品
 				</view>
-				<sc-products :ProductData="productsList" @productsItemClick="proClick()"></sc-products>
+				<sc-products :ProductData="productsList" @productsItemClick="proClick"></sc-products>
 			</view>
 		</view>
 	</view>
